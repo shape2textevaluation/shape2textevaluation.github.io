@@ -52,7 +52,7 @@ function sampleImages(){
   // Method order is randomized
   draping_modes = shuffleArray(["gt", "dist"])
   // Body/garment combination is randomized
-  gt_id = getRandomInt(num_gt)
+  gt_id   = getRandomInt(num_gt)
   dist_id = getRandomInt(num_dist)
 
   // Display corresponding images
