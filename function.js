@@ -2,22 +2,18 @@ function clickImage(imgId){
   getLock()
   img0_src = getCleanerPath(img0.src)
   img1_src = getCleanerPath(img1.src)
-  img2_src = getCleanerPath(img2.src)
 
   if(imgId == "0") {
     methodPreference = img0_src[0]
   } else if(imgId == "1") {
     methodPreference = img1_src[0]
-  }else if(imgId == "2") {
-    methodPreference = img2_src[0]
-  } else {
+  {
     methodPreference = "None"
   }
 
   sendData({"UserName": userId,
             "Img0": img0_src, 
             "Img1": img1_src, 
-            "Img2": img2_src, 
             "imgPreference": imgId,
             "methodPreference": methodPreference})
 
@@ -64,19 +60,18 @@ function sampleImages(){
   if (draping_modes[0]=="gt") 
       {
         img0.src = base_url + draping_modes[0] + "/" + "0" + ".png"
-        img1.src = base_url + draping_modes[1] + "/" + num_gt + "_" + num_dist + ".png"
+        img1.src = base_url + draping_modes[1] + "/" + "0_1" + ".png"
       }
   else 
       {
         img1.src = base_url + draping_modes[0] + "/" + "0" + ".png"
-        img0.src = base_url + draping_modes[1] + "/" + num_gt + "_" + num_dist + ".png"
+        img0.src = base_url + draping_modes[1] + "/" + "0_2" + ".png"
       }
 }
 
 function greyOutImages(){
   greyOutImage(img0)
   greyOutImage(img1)
-  greyOutImage(img2)
   greyOutImage(imgNone)
 }
 
@@ -88,7 +83,6 @@ function greyOutImage(img){
 function UNgreyOutImages(){
   UNgreyOutImage(img0)
   UNgreyOutImage(img1)
-  UNgreyOutImage(img2)
   UNgreyOutImage(imgNone)
 }
 
@@ -100,7 +94,6 @@ function UNgreyOutImage(img){
 function getLock(){
   img0.onclick = (event) => {}
   img1.onclick = (event) => {}
-  img2.onclick = (event) => {}
   imgNone.onclick = (event) => {}
   greyOutImages()
 }
@@ -108,7 +101,6 @@ function getLock(){
 function releaseLock(){
   img0.onclick = (event) => {clickImage('0')}
   img1.onclick = (event) => {clickImage('1')}
-  img2.onclick = (event) => {clickImage('2')}
   imgNone.onclick = (event) => {clickImage('none')}
   UNgreyOutImages()
 }
