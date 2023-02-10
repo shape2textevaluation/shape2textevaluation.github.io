@@ -50,19 +50,27 @@ function shuffleArray(arr){
 
 function sampleImages(){
   /* Samples and displays the same garment, draped by 3 methods: a, b, c. */
-  num_renderings = 1345
+  num_gt    = 1
+  num_dist  = 3 // n of distractors for each gt
 
   // Method order is randomized
-  draping_modes = shuffleArray(["a", "b", "c"])
+  draping_modes = shuffleArray(["gt", "dist"])
   // Body/garment combination is randomized
-  rendering_id = getRandomInt(num_renderings)
+  gt_id = getRandomInt(num_gt)
+  dist_id = getRandomInt(num_dist)
 
   // Display corresponding images
-  base_url = "https://raw.githubusercontent.com/drapingevaluation/drapingevaluation.github.io/assets/"
-  img0.src = base_url + draping_modes[0] + "/" + rendering_id + ".png"
-  img1.src = base_url + draping_modes[1] + "/" + rendering_id + ".png"
-  img2.src = base_url + draping_modes[2] + "/" + rendering_id + ".png"
-
+  base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/"
+  if (draping_modes[0]=="gt") 
+      {
+        img0.src = base_url + draping_modes[0] + "/" + num_gt + ".png"
+        img1.src = base_url + draping_modes[1] + "/" + num_gt + "_" + num_dist + ".png"
+      }
+  else 
+      {
+        img1.src = base_url + draping_modes[0] + "/" + num_gt + ".png"
+        img0.src = base_url + draping_modes[1] + "/" + num_gt + "_" + num_dist + ".png"
+      }
 }
 
 function greyOutImages(){
