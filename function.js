@@ -71,7 +71,7 @@ function sampleImages(){
         img0.src = base_url + draping_modes[0] + "/" + gt_id + "_" + dist_id + ".png"
       }
 
-  Text = "a red chair with no armrests"
+  text_prompt = "a red chair with no armrests"
 
 }
 
