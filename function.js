@@ -58,7 +58,7 @@ function sampleImages(){
   dist_id = getRandomInt(num_dist)
 
   // Display corresponding images
-  base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/"
+  base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/"
   if (draping_modes[0]=="gt") 
       {
         img0.src = base_url + draping_modes[0] + "/" + gt_id + ".png"
@@ -66,8 +66,8 @@ function sampleImages(){
       }
   else 
       {
-        img1.src = base_url + draping_modes[0] + "/" + gt_id + ".png"
-        img0.src = base_url + draping_modes[1] + "/" + gt_id + "_" + dist_id + ".png"
+        img1.src = base_url + draping_modes[1] + "/" + gt_id + ".png"
+        img0.src = base_url + draping_modes[0] + "/" + gt_id + "_" + dist_id + ".png"
       }
 
   var Text = "a red chair with no armrests"
