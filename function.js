@@ -8,7 +8,7 @@ function clickImage(imgId){
     methodPreference = img0_src[0]
   } else if(imgId == "1") {
     methodPreference = img1_src[0]
-  {
+  } else {
     methodPreference = "None"
   }
 
