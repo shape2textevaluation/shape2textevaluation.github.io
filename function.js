@@ -72,6 +72,7 @@ function sampleImages(){
       }
 
   var text_prompt = "a red chair with no armrests"
+  document.getElementById("myText").innerHTML = text_prompt
 
 }
 
