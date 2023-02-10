@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shape2Text Evaluation</title>
+  <title>Draping evaluation</title>
   <link rel="stylesheet" href="style.css">
   <script src="functions.js"></script>
 </head>
@@ -13,9 +13,9 @@
 <body onload="sampleImages(); const userId = userIdSetup();"><main>
 <h1>Comparing draping methods</h1>
 
-In this study, we are evaluating the text adherence of 3D shapes. You are presented pairs of image and a text, where two different shapes are shown together with a text description. 
-<br><b>Please click on the object you think is more related to the text prompt</b>, i.e. with the geometry and appearance which resembles the text description. If you cannot make up your mind, pick the last answer.
-<br>A new simulation is shown after each click, <b>as an endless stream. You can stop at any time.</b>
+In this study, we are comparing different methods for draping a virtual 3D garment over the human body. You are presented triplets of images, where we drape the same garment using 3 different methods. 
+<br><b>Please click on the one that you find the most realistic</b>, i.e. with the least visual defects, or the most pleasing and natural to your eyes. If you cannot make up your mind, pick the last answer.
+<br>A new draping simulation is shown after each click, <b>as an endless stream. You can stop at any time.</b>
 <br>
 <i>Thanks a lot for your help!</i>
 </p>
@@ -31,7 +31,7 @@ In this study, we are evaluating the text adherence of 3D shapes. You are presen
 <img id="img2" onclick="clickImage('2')" class="imgHover split left" />
 <div id="imgNone" onclick="clickImage('none')" class="imgHover split right divNone">
   <div class="textCenter">
-  <center><h4 > I cannot decide: no clear winner here! </h4></center>
+  <center><h4 > I cannot decide: no obvious winner. </h4></center>
   </div>
 </div>
 
