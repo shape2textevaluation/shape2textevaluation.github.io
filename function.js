@@ -1,3 +1,4 @@
+
 function clickImage(imgId){
   getLock()
   img0_src = getCleanerPath(img0.src)
@@ -13,14 +14,14 @@ function clickImage(imgId){
   } else {
     methodPreference = "None"
   }
-  
+
   sendData({"UserName": userId,
             "Img0": img0_src, 
             "Img1": img1_src, 
             "Img2": img2_src, 
             "imgPreference": imgId,
             "methodPreference": methodPreference})
-  
+
   // Delay display the next 2 images
   setTimeout(function(){
     sampleImages()
@@ -62,11 +63,6 @@ function sampleImages(){
   img0.src = base_url + draping_modes[0] + "/" + rendering_id + ".png"
   img1.src = base_url + draping_modes[1] + "/" + rendering_id + ".png"
   img2.src = base_url + draping_modes[2] + "/" + rendering_id + ".png"
-
-  img0.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/pred/0_1.png"
-  img1.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/pred/0_1.png"
-  img2.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/pred/0_1.png"
-
 
 }
 
