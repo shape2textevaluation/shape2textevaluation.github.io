@@ -69,6 +69,7 @@ function sampleImages(){
         img1.src = base_url + draping_modes[0] + "/" + num_gt + ".png"
         img0.src = base_url + draping_modes[1] + "/" + num_gt + "_" + num_dist + ".png"
       }
+}
 
 function greyOutImages(){
   greyOutImage(img0)
