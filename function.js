@@ -61,8 +61,8 @@ function sampleImages(){
   // Display corresponding images
   base_url = "https://raw.githubusercontent.com/drapingevaluation/drapingevaluation.github.io/assets/"
   img0.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/gt/0.png"
-  img1.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/pred/0_0.png"
-  img2.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/pred/0_1.png"
+  img1.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/pred/0_1.png"
+  img2.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/pred/0_2.png"
 }
 
 function greyOutImages(){
