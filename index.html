@@ -25,7 +25,12 @@ In this study, we are exploring the fidelity of some 3D shapes with a text descr
 
 <hr>
 
-<center><h4 > My text prompt here. </h4></center>
+<center><h4 id="Text"> Text prompt: . <span id="Text"></span></h4></center>
+<p id="Text">Text prompt: <span id="Text"></span></p>
+
+<script>
+  document.getElementById("Text").innerHTML = myString;
+</script>
 
 <img id="img0" onclick="clickImage('0')" class="imgHover split left"/>
 <img id="img1" onclick="clickImage('1')" class="imgHover split right" />

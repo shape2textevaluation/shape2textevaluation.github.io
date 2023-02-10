@@ -47,7 +47,7 @@ function shuffleArray(arr){
 
 function sampleImages(){
   /* Samples and displays the same garment, draped by 3 methods: a, b, c. */
-  num_gt    = 0
+  num_gt    = 1
   num_dist  = 3
 
   // Method order is randomized
@@ -61,13 +61,13 @@ function sampleImages(){
   base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/"
   if (draping_modes[0]=="gt") 
       {
-        img0.src = base_url + draping_modes[0] + "/" + num_gt + ".png"
-        img1.src = base_url + draping_modes[1] + "/" + num_gt + "_" + num_dist + ".png"
+        img0.src = base_url + draping_modes[0] + "/" + gt_id + ".png"
+        img1.src = base_url + draping_modes[1] + "/" + gt_id + "_" + dist_id + ".png"
       }
   else 
       {
-        img1.src = base_url + draping_modes[0] + "/" + num_gt + ".png"
-        img0.src = base_url + draping_modes[1] + "/" + num_gt + "_" + num_dist + ".png"
+        img1.src = base_url + draping_modes[0] + "/" + gt_id + ".png"
+        img0.src = base_url + draping_modes[1] + "/" + gt_id + "_" + dist_id + ".png"
       }
 
   var Text = "a red chair with no armrests"
