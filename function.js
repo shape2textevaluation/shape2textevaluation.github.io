@@ -47,7 +47,7 @@ function shuffleArray(arr){
 
 function sampleImages(){
   /* Samples and displays the same garment, draped by 3 methods: a, b, c. */
-  num_gt    = 1
+  num_gt    = 0
   num_dist  = 3
 
   // Method order is randomized
