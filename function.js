@@ -61,8 +61,8 @@ function sampleImages(){
   base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/"
   if (draping_modes[0]=="gt") 
       {
-        //img0.src = base_url + draping_modes[0] + "/" + gt_id + ".png"
-        img0.src = draping_modes[0] + "_" + draping_modes[1]
+        img0.src = base_url + draping_modes[0] + "/" + gt_id + ".png"
+        //img0.src = draping_modes[0] + "_" + draping_modes[1]
         img1.src = base_url + draping_modes[1] + "/" + gt_id + "_" + dist_id + ".png"
       }
   else 
