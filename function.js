@@ -45,7 +45,7 @@ function shuffleArray(arr){
 }
 
 function sampleImages(){
-  /* Samples and displays the same garment, draped by 3 methods: a, b, c. */
+  /* Samples and displays the same garment, draped by 3 methods: a, b, c. 
   num_gt    = 1
   num_dist  = 3 // n of distractors for each gt
 
@@ -54,7 +54,7 @@ function sampleImages(){
   // Body/garment combination is randomized
   gt_id   = getRandomInt(num_gt)
   dist_id = getRandomInt(num_dist)
-
+  */
   // Display corresponding images
   base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/"
   img0.src = "https://raw.githubusercontent.com/drapingevaluation/drapingevaluation.github.io/assets/a/0.png"
