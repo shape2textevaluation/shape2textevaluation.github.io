@@ -13,14 +13,14 @@ function clickImage(imgId){
   } else {
     methodPreference = "None"
   }
-
+  /*
   sendData({"UserName": userId,
             "Img0": img0_src, 
             "Img1": img1_src, 
             "Img2": img2_src, 
             "imgPreference": imgId,
             "methodPreference": methodPreference})
-
+  */
   // Delay display the next 2 images
   setTimeout(function(){
     sampleImages()
