@@ -63,6 +63,11 @@ function sampleImages(){
   img1.src = base_url + draping_modes[1] + "/" + rendering_id + ".png"
   img2.src = base_url + draping_modes[2] + "/" + rendering_id + ".png"
 
+  img0.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/pred/0_1.png"
+  img1.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/pred/0_1.png"
+  img2.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/pred/0_1.png"
+
+
 }
 
 function greyOutImages(){
