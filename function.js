@@ -57,16 +57,8 @@ function sampleImages(){
 
   // Display corresponding images
   base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/"
-  if (draping_modes[0]=="gt") 
-      {
-        img0.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/gt/0.png"
-        img1.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/gt/0.png"
-      }
-  else 
-      {
-        img1.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/gt/0.png"
-        img0.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/gt/0.png"
-      }
+  img0.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/gt/0.png"
+  img1.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/gt/0.png"
 }
 
 function greyOutImages(){
