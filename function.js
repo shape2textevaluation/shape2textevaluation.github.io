@@ -3,22 +3,18 @@ function clickImage(imgId){
   getLock()
   img0_src = getCleanerPath(img0.src)
   img1_src = getCleanerPath(img1.src)
-  img2_src = getCleanerPath(img2.src)
 
   if(imgId == "0") {
     methodPreference = img0_src[0]
   } else if(imgId == "1") {
     methodPreference = img1_src[0]
-  }else if(imgId == "2") {
-    methodPreference = img2_src[0]
-  } else {
+  {
     methodPreference = "None"
   }
 
   sendData({"UserName": userId,
             "Img0": img0_src, 
             "Img1": img1_src, 
-            "Img2": img2_src, 
             "imgPreference": imgId,
             "methodPreference": methodPreference})
 
@@ -51,24 +47,32 @@ function shuffleArray(arr){
 
 function sampleImages(){
   /* Samples and displays the same garment, draped by 3 methods: a, b, c. */
-  num_renderings = 1345
+  num_gt    = 1
+  num_dist  = 3
 
   // Method order is randomized
-  draping_modes = shuffleArray(["a", "b", "c"])
-  // Body/garment combination is randomized
-  rendering_id = getRandomInt(num_renderings)
+  draping_modes = shuffleArray(["gt", "dist"])
+
+  // Shapes combination is randomized
+  gt_id = getRandomInt(num_gt)
+  dist_id = getRandomInt(num_dist)
 
   // Display corresponding images
-  base_url = "https://raw.githubusercontent.com/drapingevaluation/drapingevaluation.github.io/assets/"
-  img0.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/gt/0.png"
-  img1.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/pred/0_1.png"
-  img2.src = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/pred/0_2.png"
-}
+  base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/assets/"
+  if (draping_modes[0]=="gt") 
+      {
+        img0.src = base_url + draping_modes[0] + "/" + num_gt + ".png"
+        img1.src = base_url + draping_modes[1] + "/" + num_gt + "_" + num_dist + ".png"
+      }
+  else 
+      {
+        img1.src = base_url + draping_modes[0] + "/" + num_gt + ".png"
+        img0.src = base_url + draping_modes[1] + "/" + num_gt + "_" + num_dist + ".png"
+      }
 
 function greyOutImages(){
   greyOutImage(img0)
   greyOutImage(img1)
-  greyOutImage(img2)
   greyOutImage(imgNone)
 }
 
@@ -80,7 +84,6 @@ function greyOutImage(img){
 function UNgreyOutImages(){
   UNgreyOutImage(img0)
   UNgreyOutImage(img1)
-  UNgreyOutImage(img2)
   UNgreyOutImage(imgNone)
 }
 
@@ -92,7 +95,6 @@ function UNgreyOutImage(img){
 function getLock(){
   img0.onclick = (event) => {}
   img1.onclick = (event) => {}
-  img2.onclick = (event) => {}
   imgNone.onclick = (event) => {}
   greyOutImages()
 }
@@ -100,7 +102,6 @@ function getLock(){
 function releaseLock(){
   img0.onclick = (event) => {clickImage('0')}
   img1.onclick = (event) => {clickImage('1')}
-  img2.onclick = (event) => {clickImage('2')}
   imgNone.onclick = (event) => {clickImage('none')}
   UNgreyOutImages()
 }
