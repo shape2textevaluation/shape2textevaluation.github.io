@@ -11,7 +11,7 @@
 </head>
 
 
-<body onload="sampleImages(); const userId = userIdSetup();"><main>
+<body onload="seen_text, seen_gt, seen_dist = sampleImages('None', 0, 0); const userId = userIdSetup();"><main>
 
 
 <h1>Exploring text and shape</h1>
@@ -26,8 +26,8 @@ In this study, we are exploring the fidelity of some 3D shapes with a text descr
 <hr>
   <center><h1> <span id="Text"></span></h1></center>
 
-<img id="img0" onclick="clickImage('0')" class="imgHover split left"/>
-<img id="img1" onclick="clickImage('1')" class="imgHover split right" />
+<img id="img0" onclick="clickImage('0', seen_text, seen_gt, seen_dist)" class="imgHover split left"/>
+<img id="img1" onclick="clickImage('1', seen_text, seen_gt, seen_dist)" class="imgHover split right" />
 
 <div style="clear: both;"> </div>
 <div style="height: 3px; display: block;" > </div>
