@@ -58,7 +58,6 @@ function sampleImages(){
   dist_id = getRandomInt(num_dist)
 
   // Display corresponding images
-  /*
   base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/"
   if (draping_modes[0]=="gt") 
       {
@@ -71,10 +70,7 @@ function sampleImages(){
         img1.src = base_url + draping_modes[1] + "/" + gt_id + ".png"
         img0.src = base_url + draping_modes[0] + "/" + gt_id + "_" + dist_id + ".png"
       }
-  */
-  img0.src = "http://localhost:8081/11084af510183635ee56c4ac0904ebb/11084af510183635ee56c4ac0904ebb.png"
-  img1.src = "http://localhost:8081/111720e8cd4c613492d9da2668ec34c/111720e8cd4c613492d9da2668ec34c.png"
-
+  '''
   var text_prompt = "a red chair with no armrests"
   document.getElementById("Text").innerHTML = text_prompt
 
