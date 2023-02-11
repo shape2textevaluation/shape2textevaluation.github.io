@@ -105,10 +105,7 @@ function sampleImages(seen_text, seen_gt, seen_dist){
 
       var seen_gt = gt_id
       var seen_dist = dist_id
-
-      document.getElementById("seen_gt").innerHTML = seen_gt
-      document.getElementById("seen_dist").innerHTML = seen_dist      
-      document.getElementById("seen_text").innerHTML = dataset
+      var seen_text = dataset
   }
 
   // Display corresponding images
@@ -127,7 +124,10 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       
   var file = base_url + "/" + dataset + ".txt"  // will be .../t2s.txt or .../gpt2s.txt
   displayText(file, gt_id)
-  return dataset, seen_gt, seen_dist
+
+  document.getElementById("seen_gt").innerHTML = seen_gt
+  document.getElementById("seen_dist").innerHTML = seen_dist      
+  document.getElementById("seen_text").innerHTML = seen_text
 }
 
 function greyOutImages(){
