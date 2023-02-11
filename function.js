@@ -86,7 +86,7 @@ function sampleImages(seen_text, seen_gt, seen_dist){
   else
   {
       // Samples and displays a text description and two different objects 
-      num_gt    = 1
+      num_gt    = 2
       num_dist  = 3
 
       // Method order is randomized
