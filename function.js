@@ -12,6 +12,7 @@ function clickImage(imgId){
     methodPreference = "None"
   }
 
+  // save data we care about
   sendData({"UserName": userId,
             "Img0": img0_src, 
             "Img1": img1_src, 
@@ -19,6 +20,7 @@ function clickImage(imgId){
             "methodPreference": methodPreference})
 
   // Delay display the next 2 images
+  // If first time this gt is shown => display now the same pair (no shuffle now) with the other text
   setTimeout(function(){
     sampleImages()
     setTimeout(function(){
@@ -45,13 +47,30 @@ function shuffleArray(arr){
   })
 }
 
+function displayText(file, idx) {
+  fetch(file)
+    .then(response => response.text())
+    .then(data => {
+      const lines = data.split('\n');
+      const line = lines[idx];
+      console.log(line);
+      // Display the line on the website:
+      document.getElementById("Text").innerHTML = line;
+    })
+    .catch(error => console.error(error));
+}
+
 function sampleImages(){
-  /* Samples and displays the same garment, draped by 3 methods: a, b, c. */
+  // Samples and displays a text description and two different objects 
   num_gt    = 1
   num_dist  = 3
 
   // Method order is randomized
-  draping_modes = shuffleArray(["gt", "dist"])
+  shapes = shuffleArray(["gt", "dist"])
+  text_prompts = shuffleArray(["t2s", "gpt2s"])
+  dataset = text_prompts[0] // will contain t2s or gpt2s
+
+  console.log(dataset)
 
   // Shapes combination is randomized
   gt_id = getRandomInt(num_gt)
@@ -59,21 +78,21 @@ function sampleImages(){
 
   // Display corresponding images
   base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/"
-  if (draping_modes[0]=="gt") 
+  if (shapes[0]=="gt") 
       {
-        img0.src = base_url + draping_modes[0] + "/" + gt_id + ".png"
+        img0.src = base_url + "/shapes/" + shapes[0] + "/" + gt_id + ".png"
         //img0.src = draping_modes[0] + "_" + draping_modes[1]
-        img1.src = base_url + draping_modes[1] + "/" + gt_id + "_" + dist_id + ".png"
+        img1.src = base_url + shapes[1] + "/" + gt_id + "_" + dist_id + ".png"
       }
   else 
       {
-        img1.src = base_url + draping_modes[1] + "/" + gt_id + ".png"
-        img0.src = base_url + draping_modes[0] + "/" + gt_id + "_" + dist_id + ".png"
+        img1.src = base_url + shapes[1] + "/" + gt_id + ".png"
+        img0.src = base_url + shapes[0] + "/" + gt_id + "_" + dist_id + ".png"
       }
-  
-  var text_prompt = "a red chair with no armrests"
-  document.getElementById("Text").innerHTML = text_prompt
-
+      
+  var file = base_url + "/" + dataset + ".txt"  // will be .../t2s.txt or .../gpt2s.txt
+  displayText(file, idx)
+  return dataset
 }
 
 function greyOutImages(){
