@@ -12,6 +12,11 @@ function clickImage(imgId, seen_text, seen_gt, seen_dist){
     methodPreference = "None"
   }
 
+  console.log('inside clickImage')
+  console.log(seen_text)
+  console.log(seen_gt)
+  console.log(seen_dist)
+  
   // save data we care about
   /*
   sendData({"UserName": userId,
@@ -55,7 +60,6 @@ function displayText(file, idx) {
     .then(data => {
       const lines = data.split('\n')
       const line = lines[idx]
-      console.log(line)
       // Display the line on the website:
       document.getElementById("Text").innerHTML = line
     })
@@ -63,13 +67,6 @@ function displayText(file, idx) {
 }
 
 function sampleImages(seen_text, seen_gt, seen_dist){
-  console.log("inside SampleImages()")
-  console.log("seen_text: ")
-  console.log(seen_text)
-  console.log("seen_gt: ")
-  console.log(seen_gt)
-  console.log("seen_dist: ")
-  console.log(seen_dist)
 
   if (seen_text == 't2s' || seen_text == 'gpt2s')
     {
@@ -83,6 +80,7 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       }
         var gt_id   = seen_gt
         var dist_id = seen_dist 
+        seen_text = None
 
     }
   else
@@ -102,10 +100,6 @@ function sampleImages(seen_text, seen_gt, seen_dist){
 
       var seen_gt = gt_id
       var seen_dist = dist_id
-
-      console.log(dataset)
-      console.log(gt_id)
-      console.log(dist_id)
 
       document.getElementById("seen_gt").innerHTML = seen_gt
       document.getElementById("seen_dist").innerHTML = seen_dist      
