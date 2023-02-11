@@ -18,14 +18,15 @@ function clickImage(imgId, seen_text, seen_gt, seen_dist){
             "Img0": img0_src, 
             "Img1": img1_src, 
             "imgPreference": imgId,
-            "methodPreference": methodPreference})
+            "methodPreference": methodPreference,
+            "dataset": seen_text})
   */
   // Delay display the next 2 images
   // If first time this gt is shown => display now the same pair (no shuffle now) with the other text
   setTimeout(function(){
     sampleImages(seen_text, seen_gt, seen_dist)
     setTimeout(function(){
-      releaseLock()
+      releaseLock(seen_text, seen_gt, seen_dist)
     }, 500);
   }, 500);
 
@@ -69,16 +70,16 @@ function sampleImages(seen_text, seen_gt, seen_dist){
   console.log(seen_gt)
   console.log("seen_dist: ")
   console.log(seen_dist)
-  
+
   if (seen_text == 't2s' || seen_text == 'gpt2s')
     {
       if (seen_text == 't2s')
       {
-        dataset = 'gpt2s'
+        var dataset = 'gpt2s'
       }
       else
       {
-        dataset = 't2s'
+        var dataset = 't2s'
       }
         var gt_id   = seen_gt
         var dist_id = seen_dist 
@@ -159,10 +160,10 @@ function getLock(){
   greyOutImages()
 }
 
-function releaseLock(){
-  img0.onclick = (event) => {clickImage('0')}
-  img1.onclick = (event) => {clickImage('1')}
-  imgNone.onclick = (event) => {clickImage('none')}
+function releaseLock(seen_text, seen_gt, seen_dist){
+  img0.onclick = (event) => {clickImage('0', seen_text, seen_gt, seen_dist)}
+  img1.onclick = (event) => {clickImage('1', seen_text, seen_gt, seen_dist)}
+  imgNone.onclick = (event) => {clickImage('none', seen_text, seen_gt, seen_dist)}
   UNgreyOutImages()
 }
 
