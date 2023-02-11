@@ -67,6 +67,11 @@ function displayText(file, idx) {
 }
 
 function sampleImages(seen_text, seen_gt, seen_dist){
+  
+  log.console('inside SampleImages')
+  log.console(seen_text)
+  log.console(seen_gt)
+  log.console(seen_dist)
 
   if (seen_text == 't2s' || seen_text == 'gpt2s')
     {
