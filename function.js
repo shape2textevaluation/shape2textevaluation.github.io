@@ -116,7 +116,7 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       
   var file = base_url + "/" + dataset + ".txt"  // will be .../t2s.txt or .../gpt2s.txt
   displayText(file, gt_id)
-  return dataset
+  return dataset, seen_gt, seen_dist
 }
 
 function greyOutImages(){
