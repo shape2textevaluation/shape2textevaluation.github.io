@@ -85,14 +85,14 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       // Method order is randomized
       shapes = shuffleArray(["gt", "dist"])
       text_prompts = shuffleArray(["t2s", "gpt2s"])
-      dataset = text_prompts[0] // will contain t2s or gpt2s
+      var dataset = text_prompts[0] // will contain t2s or gpt2s
 
       // Shapes combination is randomized
       gt_id = getRandomInt(num_gt)
       dist_id = getRandomInt(num_dist)
 
-      seen_gt = gt_id
-      seen_dist = dist_id
+      var seen_gt = gt_id
+      var seen_dist = dist_id
 
       console.log(dataset)
       console.log(gt_id)
