@@ -72,8 +72,8 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       {
         dataset = 't2s'
       }
-        gt_id   = seen_gt
-        gt_dist = seen_dist 
+        var gt_id   = seen_gt
+        var dist_id = seen_dist 
 
     }
   else
