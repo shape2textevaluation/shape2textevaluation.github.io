@@ -13,12 +13,13 @@ function clickImage(imgId){
   }
 
   // save data we care about
+  /*
   sendData({"UserName": userId,
             "Img0": img0_src, 
             "Img1": img1_src, 
             "imgPreference": imgId,
             "methodPreference": methodPreference})
-
+  */
   // Delay display the next 2 images
   // If first time this gt is shown => display now the same pair (no shuffle now) with the other text
   setTimeout(function(){
