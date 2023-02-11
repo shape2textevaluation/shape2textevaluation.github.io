@@ -70,7 +70,7 @@ function sampleImages(){
         img1.src = base_url + draping_modes[1] + "/" + gt_id + ".png"
         img0.src = base_url + draping_modes[0] + "/" + gt_id + "_" + dist_id + ".png"
       }
-  '''
+  
   var text_prompt = "a red chair with no armrests"
   document.getElementById("Text").innerHTML = text_prompt
 
