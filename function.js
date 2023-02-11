@@ -51,13 +51,13 @@ function displayText(file, idx) {
   fetch(file)
     .then(response => response.text())
     .then(data => {
-      const lines = data.split('\n');
-      const line = lines[idx];
-      console.log(line);
+      const lines = data.split('\n')
+      const line = lines[idx]
+      console.log(line)
       // Display the line on the website:
-      document.getElementById("Text").innerHTML = line;
+      document.getElementById("Text").innerHTML = line
     })
-    .catch(error => console.error(error));
+    .catch(error => console.error(error))
 }
 
 function sampleImages(seen_text, seen_gt, seen_dist){
@@ -94,6 +94,10 @@ function sampleImages(seen_text, seen_gt, seen_dist){
 
       seen_gt = gt_id
       seen_dist = dist_id
+
+      document.getElementById("seen_gt").innerHTML = seen_gt;
+      document.getElementById("seen_dist").innerHTML = seen_dist;
+      document.getElementById("seen_text").innerHTML = dataset;
   }
 
   // Display corresponding images
