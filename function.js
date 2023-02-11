@@ -98,9 +98,9 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       console.log(gt_id)
       console.log(dist_id)
 
-      document.getElementById("seen_gt").innerHTML = seen_gt;
-      document.getElementById("seen_dist").innerHTML = seen_dist;
-      document.getElementById("seen_text").innerHTML = dataset;
+      document.getElementById("seen_gt").innerHTML = seen_gt
+      document.getElementById("seen_dist").innerHTML = seen_dist      
+      document.getElementById("seen_text").innerHTML = dataset
   }
 
   // Display corresponding images
