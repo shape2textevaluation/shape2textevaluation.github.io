@@ -68,7 +68,7 @@ function displayText(file, idx) {
 
 function sampleImages(seen_text, seen_gt, seen_dist){
   
-  console.log('inside SampleImages')
+  console.log('inside SampleImages(...)')
   console.log(seen_text)
   console.log(seen_gt)
   console.log(seen_dist)
