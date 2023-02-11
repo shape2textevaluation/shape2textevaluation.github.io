@@ -1,5 +1,5 @@
 
-function clickImage(imgId){
+function clickImage(imgId, seen_text, seen_gt, seen_dist){
   getLock()
   img0_src = getCleanerPath(img0.src)
   img1_src = getCleanerPath(img1.src)
@@ -23,7 +23,7 @@ function clickImage(imgId){
   // Delay display the next 2 images
   // If first time this gt is shown => display now the same pair (no shuffle now) with the other text
   setTimeout(function(){
-    sampleImages()
+    sampleImages(seen_text, seen_gt, seen_dist)
     setTimeout(function(){
       releaseLock()
     }, 500);
@@ -62,6 +62,14 @@ function displayText(file, idx) {
 }
 
 function sampleImages(seen_text, seen_gt, seen_dist){
+  console.log("inside SampleImages()")
+  console.log("seen_text: ")
+  console.log(seen_text)
+  console.log("seen_gt: ")
+  console.log(seen_gt)
+  console.log("seen_dist: ")
+  console.log(seen_dist)
+  
   if (seen_text == 't2s' || seen_text == 'gpt2s')
     {
       if (seen_text == 't2s')
