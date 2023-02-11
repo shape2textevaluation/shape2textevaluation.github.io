@@ -60,21 +60,41 @@ function displayText(file, idx) {
     .catch(error => console.error(error));
 }
 
-function sampleImages(){
-  // Samples and displays a text description and two different objects 
-  num_gt    = 1
-  num_dist  = 3
+function sampleImages(seen_text, seen_gt, seen_dist){
+  if (seen_text == 't2s' || seen_text == 'gpt2s')
+    {
+      if (seen_text == 't2s')
+      {
+        dataset = 'gpt2s'
+      }
+      else
+      {
+        dataset = 't2s'
+      }
+        gt_id   = seen_gt
+        gt_dist = seen_dist 
 
-  // Method order is randomized
-  shapes = shuffleArray(["gt", "dist"])
-  text_prompts = shuffleArray(["t2s", "gpt2s"])
-  dataset = text_prompts[0] // will contain t2s or gpt2s
+    }
+  else
+  {
+      // Samples and displays a text description and two different objects 
+      num_gt    = 1
+      num_dist  = 3
 
-  console.log(dataset)
+      // Method order is randomized
+      shapes = shuffleArray(["gt", "dist"])
+      text_prompts = shuffleArray(["t2s", "gpt2s"])
+      dataset = text_prompts[0] // will contain t2s or gpt2s
 
-  // Shapes combination is randomized
-  gt_id = getRandomInt(num_gt)
-  dist_id = getRandomInt(num_dist)
+      console.log(dataset)
+
+      // Shapes combination is randomized
+      gt_id = getRandomInt(num_gt)
+      dist_id = getRandomInt(num_dist)
+
+      seen_gt = gt_id
+      seen_dist = dist_id
+  }
 
   // Display corresponding images
   base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/"
@@ -82,16 +102,16 @@ function sampleImages(){
       {
         img0.src = base_url + "/shapes/" + shapes[0] + "/" + gt_id + ".png"
         //img0.src = draping_modes[0] + "_" + draping_modes[1]
-        img1.src = base_url + shapes[1] + "/" + gt_id + "_" + dist_id + ".png"
+        img1.src = base_url + "/shapes/" + shapes[1] + "/" + gt_id + "_" + dist_id + ".png"
       }
   else 
       {
-        img1.src = base_url + shapes[1] + "/" + gt_id + ".png"
-        img0.src = base_url + shapes[0] + "/" + gt_id + "_" + dist_id + ".png"
+        img1.src = base_url + "/shapes/" + shapes[1] + "/" + gt_id + ".png"
+        img0.src = base_url + "/shapes/" + shapes[0] + "/" + gt_id + "_" + dist_id + ".png"
       }
       
   var file = base_url + "/" + dataset + ".txt"  // will be .../t2s.txt or .../gpt2s.txt
-  displayText(file, idx)
+  displayText(file, gt_id)
   return dataset
 }
 
