@@ -87,14 +87,16 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       text_prompts = shuffleArray(["t2s", "gpt2s"])
       dataset = text_prompts[0] // will contain t2s or gpt2s
 
-      console.log(dataset)
-
       // Shapes combination is randomized
       gt_id = getRandomInt(num_gt)
       dist_id = getRandomInt(num_dist)
 
       seen_gt = gt_id
       seen_dist = dist_id
+
+      console.log(dataset)
+      console.log(gt_id)
+      console.log(dist_id)
 
       document.getElementById("seen_gt").innerHTML = seen_gt;
       document.getElementById("seen_dist").innerHTML = seen_dist;
