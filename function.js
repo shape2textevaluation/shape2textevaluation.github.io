@@ -75,6 +75,7 @@ function sampleImages(seen_text, seen_gt, seen_dist){
 
   if (seen_text == 't2s' || seen_text == 'gpt2s')
     {
+      console.log('building double pair of shape with different text')
       if (seen_text == 't2s')
       {
         var dataset = 'gpt2s'
@@ -86,6 +87,8 @@ function sampleImages(seen_text, seen_gt, seen_dist){
         var gt_id   = seen_gt
         var dist_id = seen_dist 
         seen_text = None
+        console.log(gt_id)
+        console.log(dist_id)
 
     }
   else
@@ -125,6 +128,10 @@ function sampleImages(seen_text, seen_gt, seen_dist){
   var file = base_url + "/" + dataset + ".txt"  // will be .../t2s.txt or .../gpt2s.txt
   displayText(file, gt_id)
 
+  console.log('saving vars')
+  console.log(seen_text)
+  console.log(seen_gt)
+  console.log(seen_dist)
   document.getElementById("seen_gt").innerHTML = seen_gt
   document.getElementById("seen_dist").innerHTML = seen_dist      
   document.getElementById("seen_text").innerHTML = seen_text
