@@ -125,7 +125,7 @@ function sampleImages(seen_text, seen_gt, seen_dist){
         img0.src = base_url + "/shapes/" + shapes[0] + "/" + gt_id + "_" + dist_id + ".png"
       }
       
-  var file = base_url + "/" + dataset + ".txt"  // will be .../t2s.txt or .../gpt2s.txt
+  var file = base_url + dataset + ".txt"  // will be .../t2s.txt or .../gpt2s.txt
   displayText(file, gt_id.innerHTML)
 
   console.log('saving vars')
