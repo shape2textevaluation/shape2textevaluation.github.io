@@ -73,10 +73,10 @@ function sampleImages(seen_text, seen_gt, seen_dist){
   console.log(seen_gt)
   console.log(seen_dist)
 
-  if (seen_text == 't2s' || seen_text == 'gpt2s')
+  if (seen_text.innerHTML == 't2s' || seen_text.innerHTML == 'gpt2s')
     {
       console.log('building double pair of shape with different text')
-      if (seen_text == 't2s')
+      if (seen_text.innerHTML == 't2s')
       {
         var dataset = 'gpt2s'
       }
