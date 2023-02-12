@@ -126,7 +126,7 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       }
       
   var file = base_url + dataset + ".txt"  // will be .../t2s.txt or .../gpt2s.txt
-  displayText(file, gt_id.innerHTML)
+  displayText(file, gt_id)
 
   console.log('saving vars')
   console.log(seen_text)
