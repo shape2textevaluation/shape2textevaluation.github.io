@@ -103,8 +103,8 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       var dataset = text_prompts[0] // will contain t2s or gpt2s
 
       // Shapes combination is randomized
-      gt_id = getRandomInt(num_gt)
-      dist_id = getRandomInt(num_dist)
+      var gt_id = getRandomInt(num_gt)
+      var dist_id = getRandomInt(num_dist)
 
       var seen_gt = gt_id
       var seen_dist = dist_id
