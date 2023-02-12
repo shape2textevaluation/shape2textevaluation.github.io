@@ -86,7 +86,7 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       }
         var gt_id   = seen_gt
         var dist_id = seen_dist 
-        seen_text = None
+        seen_text = "None"
         console.log(gt_id)
         console.log(dist_id)
 
