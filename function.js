@@ -166,24 +166,24 @@ function sampleImages(seen_text, seen_gt, seen_dist){
   base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/"
   if (shapes[0]=="gt") 
       {
-        img0.src = base_url + "/shapes/" + "gt" + "/" + gt_id + ".png"
+        img0.src = base_url + "shapes/" + "gt" + "/" + gt_id + ".png"
         //img0.src = draping_modes[0] + "_" + draping_modes[1]
-        img1.src = base_url + "/shapes/" + "dist" + "/" + gt_id + "_" + dist_id + ".png"
+        img1.src = base_url + "shapes/" + "dist" + "/" + gt_id + "_" + dist_id + ".png"
         
-        imgs_path = base_url + "/shapes/" + "gt" + "/"
+        imgs_path = base_url + "shapes/" + "gt" + "/"
         img0.src = findPath(imgs_path, gt_id, dist_id, is_gt=true)
-        imgs_path = base_url + "/shapes/" + "dist" + "/"
+        imgs_path = base_url + "shapes/" + "dist" + "/"
         img0.src = findPath(imgs_path, gt_id, dist_id, is_gt=false)
 
       }
   else 
       {
-        img1.src = base_url + "/shapes/" + "gt" + "/" + gt_id + ".png"
-        img0.src = base_url + "/shapes/" + "dist" + "/" + gt_id + "_" + dist_id + ".png"
+        img1.src = base_url + "shapes/" + "gt" + "/" + gt_id + ".png"
+        img0.src = base_url + "shapes/" + "dist" + "/" + gt_id + "_" + dist_id + ".png"
 
-        imgs_path = base_url + "/shapes/" + "gt" + "/"
+        imgs_path = base_url + "shapes/" + "gt" + "/"
         img0.src = findPath(imgs_path, gt_id, dist_id, is_gt=false)
-        imgs_path = base_url + "/shapes/" + "dist" + "/"
+        imgs_path = base_url + "shapes/" + "dist" + "/"
         img0.src = findPath(imgs_path, gt_id, dist_id, is_gt=true)
       }
       
