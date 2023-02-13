@@ -61,10 +61,10 @@ function displayText(file, idx) {
     .then(data => {
       const lines = data.split('\n')
       const line = lines[idx]
+      console.log(line)
       // Display the line on the website:
       document.getElementById("Text").innerHTML = line
     })
-    .catch(error => console.error(error))
 }
 
 function sampleImages(seen_text, seen_gt, seen_dist){
