@@ -125,11 +125,6 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       {
         img1.src = base_url + "shapes/" + "gt" + "/" + gt_id + ".png"
         img0.src = base_url + "shapes/" + "dist" + "/" + gt_id + "_" + dist_id + ".png"
-
-        imgs_path = base_url + "shapes/" + "gt" + "/"
-        img0.src = findPath(imgs_path, gt_id, dist_id, is_gt=false)
-        imgs_path = base_url + "shapes/" + "dist" + "/"
-        img0.src = findPath(imgs_path, gt_id, dist_id, is_gt=true)
       }
       
   var file = base_url + dataset + ".txt"  // will be .../t2s.txt or .../gpt2s.txt
