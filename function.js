@@ -130,12 +130,11 @@ function sampleImages(seen_text, seen_gt, seen_dist){
   // display text
   //displayText(file, gt_id.innerHTML)
   
-  file = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/gpt2s.txt"
   fetch(file)
     .then(response => response.text())
     .then(data => {
-      const lines = data.split('\n')
-      const line = lines[idx]
+      var lines = data.split('\n')
+      var line = lines[idx]
       console.log(line)
       // Display the line on the website:
       document.getElementById("Text").innerHTML = line
