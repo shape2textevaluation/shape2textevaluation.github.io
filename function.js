@@ -1,5 +1,5 @@
-import fs from fs;
-import path from path;
+import fs from "fs";
+import path from "path";
 
 function clickImage(imgId, seen_text, seen_gt, seen_dist){
   getLock()
