@@ -119,6 +119,7 @@ function findPath(imgs_path, gt_id, dist_id, is_gt)
       console.log(`Found file with index ${index} at path ${filePath}`);
       // Do whatever you need with the file
       // ...
+      return filePath
       break; // Stop the loop after the first match is found
     }
   }
@@ -184,7 +185,6 @@ function sampleImages(seen_text, seen_gt, seen_dist){
         img0.src = findPath(imgs_path, gt_id, dist_id, is_gt=true)
         imgs_path = base_url + "shapes/" + "dist" + "/"
         img0.src = findPath(imgs_path, gt_id, dist_id, is_gt=false)
-
       }
   else 
       {
