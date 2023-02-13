@@ -1,3 +1,5 @@
+import fs from fs
+import path from path
 
 function clickImage(imgId, seen_text, seen_gt, seen_dist){
   getLock()
@@ -84,8 +86,8 @@ function findPath(imgs_path, gt_id, dist_id, is_gt)
     const prefix = gt_id + '_' + dist_id + '_';
   }
 
-  const fs = import('fs');
-  const path = import('path');
+  //const fs = import('fs');
+  //const path = import('path');
 
   // Directory path where the files are located
   const dirPath = imgs_path
