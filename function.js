@@ -130,6 +130,7 @@ function sampleImages(seen_text, seen_gt, seen_dist){
   // display text
   //displayText(file, gt_id.innerHTML)
   
+  idx = gt_id
   fetch(file)
     .then(response => response.text())
     .then(data => {
