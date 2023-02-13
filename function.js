@@ -1,6 +1,6 @@
-import fs from "./node_modules/fs";
+import fs from "./node_modules/fs/fs";
 //import * as fs from 'fs';
-import * as path from './node_modules/path'
+import * as path from './node_modules/path/path'
 //import path from "path";
 
 function clickImage(imgId, seen_text, seen_gt, seen_dist){
