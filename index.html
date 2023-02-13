@@ -10,9 +10,6 @@
   <script src="./function.js"></script>
 </head>
 
-<div id="seen_text"></div>
-<div id="seen_gt"></div>
-<div id="seen_dist"></div>
 
 <body onload="sampleImages('None', 0, 0); const userId = userIdSetup();"><main>
 
@@ -29,8 +26,8 @@ In this study, we are exploring the fidelity of some 3D shapes with a text descr
 <hr>
   <center><h1> <span id="Text"></span></h1></center>
 
-<img id="img0" onclick="clickImage('0', seen_text, seen_gt, seen_dist)" class="imgHover split left"/>
-<img id="img1" onclick="clickImage('1', seen_text, seen_gt, seen_dist)" class="imgHover split right" />
+<img id="img0" onclick="clickImage('0')" class="imgHover split left"/>
+<img id="img1" onclick="clickImage('1')" class="imgHover split right" />
 
 <div style="clear: both;"> </div>
 <div style="height: 3px; display: block;" > </div>

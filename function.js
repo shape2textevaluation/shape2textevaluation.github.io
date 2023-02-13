@@ -1,4 +1,4 @@
-function clickImage(imgId, seen_text, seen_gt, seen_dist){
+function clickImage(imgId){
   getLock()
   img0_src = getCleanerPath(img0.src)
   img1_src = getCleanerPath(img1.src)
@@ -17,7 +17,6 @@ function clickImage(imgId, seen_text, seen_gt, seen_dist){
   console.log('img1: ', img1_src)
   console.log('img preference: ', imgId)
   console.log('method preference: ', methodPreference)
-  console.log('dataset: ', seen_text)
 
   // save data we care about
   /*
@@ -31,9 +30,9 @@ function clickImage(imgId, seen_text, seen_gt, seen_dist){
   // Delay display the next 2 images
   // If first time this gt is shown => display now the same pair (no shuffle now) with the other text
   setTimeout(function(){
-    sampleImages(seen_text, seen_gt, seen_dist)
+    sampleImages()
     setTimeout(function(){
-      releaseLock(seen_text, seen_gt, seen_dist)
+      releaseLock()
     }, 500);
   }, 500);
 
@@ -64,37 +63,12 @@ function displayText(file, idx) {
       const line = lines[idx]
       console.log(line)
       // Display the line on the website:
-      document.getElementById("Text").innerHTML = line
+      document.getElementById("Text").innerText = line
     })
 }
 
-function sampleImages(seen_text, seen_gt, seen_dist){
+function sampleImages(){
   
-  console.log('inside SampleImages(...)')
-  console.log(seen_text)
-  console.log(seen_gt)
-  console.log(seen_dist)
-
-  if (seen_text.innerHTML == 't2s' || seen_text.innerHTML == 'gpt2s')
-    {
-      console.log('building double pair of shape with different text')
-      if (seen_text.innerHTML == 't2s')
-      {
-        var dataset = 'gpt2s'
-      }
-      else
-      {
-        var dataset = 't2s'
-      }
-        var gt_id   = seen_gt.innerHTML
-        var dist_id = seen_dist.innerHTML
-        seen_text = "None"
-        console.log(gt_id)
-        console.log(dist_id)
-
-    }
-  else
-  {
       // Samples and displays a text description and two different objects 
       num_gt    = 2
       num_dist  = 3
@@ -111,14 +85,12 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       var seen_gt = gt_id
       var seen_dist = dist_id
       var seen_text = dataset
-  }
 
   // Display corresponding images
   base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/"
   if (shapes[0]=="gt") 
       {
         img0.src = base_url + "shapes/" + "gt" + "/" + gt_id + ".png"
-        //img0.src = draping_modes[0] + "_" + draping_modes[1]
         img1.src = base_url + "shapes/" + "dist" + "/" + gt_id + "_" + dist_id + ".png"
       }
   else 
@@ -130,14 +102,6 @@ function sampleImages(seen_text, seen_gt, seen_dist){
   var file = base_url + dataset + ".txt"  // will be .../t2s.txt or .../gpt2s.txt
   // display text
   displayText(file, gt_id)
-  
-  console.log('saving vars')
-  console.log(seen_text)
-  console.log(seen_gt)
-  console.log(seen_dist)
-  document.getElementById("seen_gt").innerHTML = seen_gt
-  document.getElementById("seen_dist").innerHTML = seen_dist      
-  document.getElementById("seen_text").innerHTML = seen_text
 }
 
 function greyOutImages(){
@@ -170,9 +134,9 @@ function getLock(){
 }
 
 function releaseLock(seen_text, seen_gt, seen_dist){
-  img0.onclick = (event) => {clickImage('0', seen_text, seen_gt, seen_dist)}
-  img1.onclick = (event) => {clickImage('1', seen_text, seen_gt, seen_dist)}
-  imgNone.onclick = (event) => {clickImage('none', seen_text, seen_gt, seen_dist)}
+  img0.onclick = (event) => {clickImage('0')}
+  img1.onclick = (event) => {clickImage('1')}
+  imgNone.onclick = (event) => {clickImage('none')}
   UNgreyOutImages()
 }
 
