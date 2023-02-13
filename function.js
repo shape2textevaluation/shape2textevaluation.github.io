@@ -84,8 +84,8 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       {
         var dataset = 't2s'
       }
-        var gt_id   = seen_gt
-        var dist_id = seen_dist 
+        var gt_id   = seen_gt.innerHTML
+        var dist_id = seen_dist.innerHTML
         seen_text = "None"
         console.log(gt_id)
         console.log(dist_id)
