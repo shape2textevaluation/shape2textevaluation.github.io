@@ -131,6 +131,7 @@ function sampleImages(seen_text, seen_gt, seen_dist){
   //displayText(file, gt_id.innerHTML)
   
   idx = gt_id
+  file = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/gpt2s.txt"
   fetch(file)
     .then(response => response.text())
     .then(data => {
