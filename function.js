@@ -1,8 +1,3 @@
-import fs from "./node_modules/fs/fs";
-//import * as fs from 'fs';
-import * as path from './node_modules/path/path'
-//import path from "path";
-
 function clickImage(imgId, seen_text, seen_gt, seen_dist){
   getLock()
   img0_src = getCleanerPath(img0.src)
