@@ -84,8 +84,8 @@ function findPath(imgs_path, gt_id, dist_id, is_gt)
     const prefix = gt_id + '_' + dist_id + '_';
   }
 
-  const fs = require('fs');
-  const path = require('path');
+  const fs = import('fs');
+  const path = import('path');
 
   // Directory path where the files are located
   const dirPath = imgs_path
