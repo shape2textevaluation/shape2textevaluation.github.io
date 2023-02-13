@@ -55,6 +55,7 @@ function shuffleArray(arr){
 }
 
 function displayText(file, idx) {
+  file = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/gpt2s.txt"
   fetch(file)
     .then(response => response.text())
     .then(data => {
