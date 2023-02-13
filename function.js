@@ -14,7 +14,7 @@ function clickImage(imgId, seen_text, seen_gt, seen_dist){
     methodPreference = "None"
   }
 
-  console.log('sending data...')
+  console.log('sending data')
   console.log('username: ', userId)
   console.log('img0: ', img0_src)
   console.log('img1: ', img1_src)
