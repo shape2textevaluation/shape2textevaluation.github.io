@@ -12,11 +12,14 @@ function clickImage(imgId, seen_text, seen_gt, seen_dist){
     methodPreference = "None"
   }
 
-  console.log('inside clickImage')
-  console.log(seen_text)
-  console.log(seen_gt)
-  console.log(seen_dist)
-  
+  console.log('sending data...')
+  console.log('username: ', userId)
+  console.log('img0: ', img0_src)
+  console.log('img1: ', img1_src)
+  console.log('img preference: ', imgId)
+  console.log('method preference: ', methodPreference)
+  console.log('dataset: ', seen_text)
+
   // save data we care about
   /*
   sendData({"UserName": userId,
