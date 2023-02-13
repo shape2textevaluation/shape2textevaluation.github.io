@@ -103,7 +103,15 @@ function findPath(imgs_path, gt_id, dist_id, is_gt)
     // Check if the file matches the pattern
     if (file.startsWith(prefix) && file.endsWith(suffix)) {
       // Get the index number from the filename
-      const index = file.split('_')[1];
+      if (is_gt==true)
+      {
+        const index = file.split('_')[1];
+      }
+      else
+      {
+        pathsplit = file.split('_')[1];
+        const index = pathsplit.split('_')[1];
+      }
       // Construct the path to the file
       const filePath = path.join(dirPath, file);
       console.log(`Found file with index ${index} at path ${filePath}`);
