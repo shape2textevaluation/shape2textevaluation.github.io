@@ -128,22 +128,8 @@ function sampleImages(seen_text, seen_gt, seen_dist){
       
   var file = base_url + dataset + ".txt"  // will be .../t2s.txt or .../gpt2s.txt
   // display text
-  //displayText(file, gt_id.innerHTML)
+  displayText(file, gt_id.innerHTML)
   
-  idx = gt_id
-  file = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/gpt2s.txt"
-  fetch(file)
-    .then(response => response.text())
-    .then(data => {
-      var lines = data.split('\n')
-      var line = lines[idx]
-      console.log(line)
-      // Display the line on the website:
-      document.getElementById("Text").innerHTML = line
-    })
-
-
-
   console.log('saving vars')
   console.log(seen_text)
   console.log(seen_gt)
