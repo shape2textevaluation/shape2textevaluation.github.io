@@ -69,6 +69,54 @@ function displayText(file, idx) {
     })
 }
 
+function findPath(imgs_path, gt_id, dist_id, is_gt)
+{
+  /*  get full path of <gt_id>_<dist_id>_<model_id>.png 
+      or <gt_id>_<model_id>.png 
+  */
+
+  if (is_gt==true)
+  {
+    const prefix = gt_id + '_';
+  }
+  else
+  {
+    const prefix = gt_id + '_' + dist_id + '_';
+  }
+
+  const fs = require('fs');
+  const path = require('path');
+
+  // Directory path where the files are located
+  const dirPath = imgs_path
+
+  // Define the pattern to match the filename
+    // First two characters before the underscore
+  const suffix = '.png';    // File extension
+
+  // Read the directory and find the file that matches the pattern
+  fs.readdir(dirPath, (err, files) => {
+    if (err) throw err;
+
+  // Loop through all the files in the directory
+  for (const file of files) {
+    // Check if the file matches the pattern
+    if (file.startsWith(prefix) && file.endsWith(suffix)) {
+      // Get the index number from the filename
+      const index = file.split('_')[1];
+      // Construct the path to the file
+      const filePath = path.join(dirPath, file);
+      console.log(`Found file with index ${index} at path ${filePath}`);
+      // Do whatever you need with the file
+      // ...
+      break; // Stop the loop after the first match is found
+    }
+  }
+  })
+
+}
+
+
 function sampleImages(seen_text, seen_gt, seen_dist){
   
   console.log('inside SampleImages(...)')
@@ -118,14 +166,25 @@ function sampleImages(seen_text, seen_gt, seen_dist){
   base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/"
   if (shapes[0]=="gt") 
       {
-        img0.src = base_url + "/shapes/" + shapes[0] + "/" + gt_id + ".png"
+        img0.src = base_url + "/shapes/" + "gt" + "/" + gt_id + ".png"
         //img0.src = draping_modes[0] + "_" + draping_modes[1]
-        img1.src = base_url + "/shapes/" + shapes[1] + "/" + gt_id + "_" + dist_id + ".png"
+        img1.src = base_url + "/shapes/" + "dist" + "/" + gt_id + "_" + dist_id + ".png"
+        
+        imgs_path = base_url + "/shapes/" + "gt" + "/"
+        img0.src = findPath(imgs_path, gt_id, dist_id, is_gt=true)
+        imgs_path = base_url + "/shapes/" + "dist" + "/"
+        img0.src = findPath(imgs_path, gt_id, dist_id, is_gt=false)
+
       }
   else 
       {
-        img1.src = base_url + "/shapes/" + shapes[1] + "/" + gt_id + ".png"
-        img0.src = base_url + "/shapes/" + shapes[0] + "/" + gt_id + "_" + dist_id + ".png"
+        img1.src = base_url + "/shapes/" + "gt" + "/" + gt_id + ".png"
+        img0.src = base_url + "/shapes/" + "dist" + "/" + gt_id + "_" + dist_id + ".png"
+
+        imgs_path = base_url + "/shapes/" + "gt" + "/"
+        img0.src = findPath(imgs_path, gt_id, dist_id, is_gt=false)
+        imgs_path = base_url + "/shapes/" + "dist" + "/"
+        img0.src = findPath(imgs_path, gt_id, dist_id, is_gt=true)
       }
       
   var file = base_url + dataset + ".txt"  // will be .../t2s.txt or .../gpt2s.txt
