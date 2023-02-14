@@ -67,12 +67,25 @@ function displayText(file, idx) {
     })
 }
 
+function readJSON() {
+  // read local JSON file in javascript
+  fetch("./data.json")
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+  })
+  return data
+}
+
 function sampleImages(){
   
       // Samples and displays a text description and two different objects 
       num_gt    = 2
       num_dist  = 3
 
+      experiments = readJSON()
       // Method order is randomized
       shapes = shuffleArray(["gt", "dist"])
       text_prompts = shuffleArray(["t2s", "gpt2s"])

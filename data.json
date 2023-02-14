@@ -55,12 +55,6 @@
         "text":     "Rectangular brown chair crafted from wood, with a black line design, no armrests, and a flat panel at the back for extra comfort.",
         "dataset":  "gpt2s",
         "task":     "hard"
-        },
-        
-
+        }
     ]
-
-
-
-
 }
