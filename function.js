@@ -75,20 +75,20 @@ function readJSON() {
   })
   .then(function (data) {
     console.log(data);
+    return data
   })
-  return data
 }
 
 function sampleImages(){
   
       // Samples and displays a text description and two different objects 
-      num_gt    = 2
-      num_dist  = 3
+      var num_gt    = 2
+      var num_dist  = 3
 
-      experiments = readJSON()
+      var experiments = readJSON()
       // Method order is randomized
-      shapes = shuffleArray(["gt", "dist"])
-      text_prompts = shuffleArray(["t2s", "gpt2s"])
+      var shapes = shuffleArray(["gt", "dist"])
+      var text_prompts = shuffleArray(["t2s", "gpt2s"])
       var dataset = text_prompts[0] // will contain t2s or gpt2s
 
       // Shapes combination is randomized

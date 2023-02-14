@@ -1,13 +1,4 @@
-{
-    "experiments":
-    [ 
-        {"gt_id":   "3e427b76d051cb9ccdea755aedb6e3f3",
-        "dist_id":  "82b42b0f3ba76484e4fa0af6f7c25e58",
-        "text":     "A purple, wooden folding chair with a fabric seat and back, curved arms, and a bentwood base.",
-        "dataset":  "gpt2s",
-        "task":     "hard"
-        },
-
+[
         {"gt_id":   "3e427b76d051cb9ccdea755aedb6e3f3",
         "dist_id":  "82b42b0f3ba76484e4fa0af6f7c25e58",
         "text":     "A purple color movable armchair with bend wood on its base. It is made up of wood.",
@@ -55,6 +46,12 @@
         "text":     "Rectangular brown chair crafted from wood, with a black line design, no armrests, and a flat panel at the back for extra comfort.",
         "dataset":  "gpt2s",
         "task":     "hard"
+        },
+
+        {"gt_id":   "3e427b76d051cb9ccdea755aedb6e3f3",
+        "dist_id":  "82b42b0f3ba76484e4fa0af6f7c25e58",
+        "text":     "A purple, wooden folding chair with a fabric seat and back, curved arms, and a bentwood base.",
+        "dataset":  "gpt2s",
+        "task":     "hard"
         }
-    ]
-}
+]
