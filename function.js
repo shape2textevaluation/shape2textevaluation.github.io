@@ -30,7 +30,7 @@ function clickImage(imgId){
   // Delay display the next 2 images
   // If first time this gt is shown => display now the same pair (no shuffle now) with the other text
   setTimeout(function(){
-    sampleImages()
+    newsampleImages()
     setTimeout(function(){
       releaseLock()
     }, 500);
@@ -67,15 +67,41 @@ function displayText(file, idx) {
     })
 }
 
-function readJSON() {
-  // read local JSON file in javascript
-  fetch("./data.json")
-  .then(function (response) {
-    return response.json();
+function newsampleImages(){
+
+  fetch('./data.json')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+    // pick random element from data
+    idx = getRandomInt(data.length)
+    gt_id = data[idx].gt_id
+    dist_id = data[idx].dist_id
+    text = data[idx].text
+    dataset = data[idx].dataset
+    task = data[idx].task
+    base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/"
+
+    // Method order is randomized
+    var shapes = shuffleArray([gt_id, dist_id])
+    if (shapes[0]==gt_id) // target is used to remember which shape is GT
+    {
+      target = 0
+    }
+    else
+    {
+      target = 1
+    }
+
+    // display images
+    img0.src = base_url + "shapes/" + shapes[0] + ".png"
+    img1.src = base_url + "shapes/" + shapes[1] + ".png"
+
+    // display text
+    document.getElementById("Text").innerText = text
   })
-  .then(function (data) {
-    console.log(data);
-    return data
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error)
   })
 }
 
@@ -85,7 +111,6 @@ function sampleImages(){
       var num_gt    = 2
       var num_dist  = 3
 
-      var experiments = readJSON()
       // Method order is randomized
       var shapes = shuffleArray(["gt", "dist"])
       var text_prompts = shuffleArray(["t2s", "gpt2s"])
