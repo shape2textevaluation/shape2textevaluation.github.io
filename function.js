@@ -11,26 +11,27 @@ function clickImage(imgId){
     methodPreference = "None"
   }
 
-  console.log('sending data')
   console.log('username: ', userId)
-  console.log('img0: ', img0_src)
-  console.log('img1: ', img1_src)
-  console.log('img preference: ', imgId)
-  console.log('method preference: ', methodPreference)
+  console.log('preference: ', imgId)
+  console.log('img0: ', img0_id)
+  console.log('img1: ', img1_id)
+  console.log('target: ', target)
+  console.log('text: ', text)
+  console.log('dataset: ', dataset)
 
   // save data we care about
-  /*
-  sendData({"UserName": userId,
-            "Img0": img0_src, 
-            "Img1": img1_src, 
-            "imgPreference": imgId,
-            "methodPreference": methodPreference,
-            "dataset": seen_text})
-  */
+  sendData({"user": userId,
+            "preference": imgId, 
+            "img0": img0_id, 
+            "img1": img1_id,
+            "target": target,
+            "text": text,
+            "dataset": dataset})
+
   // Delay display the next 2 images
   // If first time this gt is shown => display now the same pair (no shuffle now) with the other text
   setTimeout(function(){
-    newsampleImages()
+    newSampleImages()
     setTimeout(function(){
       releaseLock()
     }, 500);
@@ -67,7 +68,7 @@ function displayText(file, idx) {
     })
 }
 
-function newsampleImages(){
+function newSampleImages(){
 
   fetch('./data.json')
   .then(response => response.json())
@@ -93,9 +94,13 @@ function newsampleImages(){
       target = 1
     }
 
+    // save model_ids of images
+    img0_id = shapes[0]
+    img1_id = shapes[1]
+
     // display images
-    img0.src = base_url + "shapes/" + shapes[0] + ".png"
-    img1.src = base_url + "shapes/" + shapes[1] + ".png"
+    img0.src = base_url + "shapes/" + img0_id + ".png"
+    img1.src = base_url + "shapes/" + img1_id + ".png"
 
     // display text
     document.getElementById("Text").innerText = text
@@ -179,6 +184,7 @@ function releaseLock(seen_text, seen_gt, seen_dist){
 }
 
 function sendData(data) {
+  console.log('sending data...')
   const XHR = new XMLHttpRequest();
   const FD = new FormData();
 
@@ -198,7 +204,10 @@ function sendData(data) {
   });
 
   // Set up our request
-  XHR.open('POST', 'https://script.google.com/macros/s/AKfycbzgoJLTCyaqrgrZ2jCHQZKymAZpW7ON1YX4nhXJ8lNyvraYf1MzJF01MIjJFWI-GQE/exec');
+  //XHR.open('POST', 'https://script.google.com/macros/s/AKfycbzgoJLTCyaqrgrZ2jCHQZKymAZpW7ON1YX4nhXJ8lNyvraYf1MzJF01MIjJFWI-GQE/exec');
+
+  // Set up request to my Google Sheet
+  XHR.open('POST', 'https://script.google.com/macros/s/AKfycbwuQVFTvN439EUSZP4UpnCCXsH9zqsFhoHWzYFFYnhEYd31EF8d4mQSCP22oU0UJ98FiQ/exec');
 
   // Send our FormData object; HTTP headers are set automatically
   XHR.send(FD);
