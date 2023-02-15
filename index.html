@@ -16,17 +16,16 @@
 
 <form method="POST" action="https://script.google.com/macros/s/AKfycbzrENRjzcUH5SlvTbvXnYHVHxuO5XGN8_Jhda56WiLNM5zOJdB9Sbfuje9fcJ80Ky-Zig/exec"></form>
 
-<h1>Exploring text and shape</h1>
+<h1>Pick an object</h1>
 
-In this study, we are exploring the fidelity of some 3D shapes with a text description. You are presented a pair of 3D objects, together with a sentence.
-<br><b>Please click on the object you find the most faithful to the text description</b>, i.e. with the shape and appearance which is clearly described by the text. If you cannot make up your mind, pick the last answer. 
-<br>A new simulation is shown after each click, <b>as an endless stream. You can stop at any time.</b>
+<br><b>Please click on the object that best matches the text description</b>. Look for the object whose shape and appearance are better described by the text. If the text description does not allow you to choose one object over the other, click on the "I cannot decide between the two objects" box. 
+<br>A new simulation is shown after each click, as an endless stream. You can stop at any time.
 <br>
 <i>Thanks a lot for your help!</i>
 </p>
 
 <hr>
-  <center><h1> <span id="Text"></span></h1></center>
+  <center><h3> <span id="Text"></span></h3></center>
 
 <img id="img0" onclick="clickImage('0')" class="imgHover split left"/>
 <img id="img1" onclick="clickImage('1')" class="imgHover split right" />
@@ -37,7 +36,7 @@ In this study, we are exploring the fidelity of some 3D shapes with a text descr
 
 <div id="imgNone" onclick="clickImage('none')" class="imgHover split right divNone">
   <div class="textCenter">
-  <center><h4 > I cannot decide: no obvious winner. </h4></center>
+  <center><h4 > I cannot decide between the two objects. </h4></center>
   </div>
 </div>
 
