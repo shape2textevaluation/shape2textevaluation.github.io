@@ -112,6 +112,7 @@ function newSampleImages(){
   })
 }
 
+/*
 function sampleImages(){
   
       // Samples and displays a text description and two different objects 
@@ -148,6 +149,7 @@ function sampleImages(){
   // display text
   displayText(file, gt_id)
 }
+*/
 
 function greyOutImages(){
   greyOutImage(img0)
