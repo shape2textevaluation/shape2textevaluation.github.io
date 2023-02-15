@@ -20,7 +20,7 @@ function clickImage(imgId){
   console.log('dataset: ', dataset)
 
   // save data we care about
-  sendData({"user": userId,
+  sendData({"username": userId,
             "preference": imgId, 
             "img0": img0_id, 
             "img1": img1_id,
