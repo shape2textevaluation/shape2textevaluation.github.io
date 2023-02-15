@@ -100,8 +100,6 @@ function newSampleImages(){
     img1_id = shapes[1]
 
     // display images
-    img0.src = base_url + "shapes/" + img0_id + ".png"
-    img1.src = base_url + "shapes/" + img1_id + ".png"
     img0.src = base_url + "/" + img0_id + "/" + img0_id + ".png"
     img1.src = base_url + "/" + img1_id + "/" + img1_id + ".png"
 
