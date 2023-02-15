@@ -21,12 +21,7 @@ function clickImage(imgId){
 
   // save data we care about
   sendData({"username": userId,
-            "preference": imgId, 
-            "img0": img0_id, 
-            "img1": img1_id,
-            "target": target,
-            "text": text,
-            "dataset": dataset})
+            "preference": imgId})
 
   // Delay display the next 2 images
   // If first time this gt is shown => display now the same pair (no shuffle now) with the other text
@@ -70,7 +65,7 @@ function displayText(file, idx) {
 
 function newSampleImages(){
 
-  fetch('./data.json')
+  fetch('./all_data.json')
   .then(response => response.json())
   .then(data => {
     console.log(data)
@@ -82,6 +77,7 @@ function newSampleImages(){
     dataset = data[idx].dataset
     task = data[idx].task
     base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/"
+    base_url = 'http://localhost:8081/'
 
     // Method order is randomized
     var shapes = shuffleArray([gt_id, dist_id])
@@ -101,6 +97,9 @@ function newSampleImages(){
     // display images
     img0.src = base_url + "shapes/" + img0_id + ".png"
     img1.src = base_url + "shapes/" + img1_id + ".png"
+    img0.src = base_url + "/" + img0_id + "/" + img0_id + ".png"
+    img1.src = base_url + "/" + img1_id + "/" + img1_id + ".png"
+
 
     // display text
     document.getElementById("Text").innerText = text
@@ -192,6 +191,8 @@ function sendData(data) {
   for (const [name, value] of Object.entries(data)) {
     FD.append(name, value);
   }
+  console.log("FD")
+  console.log(FD)
 
   // Define what happens on successful data submission
   XHR.addEventListener('load', (event) => {
