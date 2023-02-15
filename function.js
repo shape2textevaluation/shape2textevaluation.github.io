@@ -77,7 +77,7 @@ function newSampleImages(){
     dataset = data[idx].dataset
     task = data[idx].task
     base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/"
-    base_url = 'http://localhost:8081/'
+    base_url = 'http://localhost:8080/'
 
     // Method order is randomized
     var shapes = shuffleArray([gt_id, dist_id])
