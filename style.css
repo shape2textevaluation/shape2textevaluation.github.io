@@ -17,7 +17,7 @@
 
 
 img {
-border: 1px solid #555;
+border: 2px solid #0b0505;
 }
 
 main {
@@ -29,7 +29,7 @@ padding-right: 8px;
 padding-left: 8px; }
 
 .split {
-  display: block;
+  display: inline-block;
   height: 100%;
   width: 49% !important;
 }
@@ -45,15 +45,16 @@ padding-left: 8px; }
 }
 
 .divNone {
-width: 500px;
-aspect-ratio: 1 / 1;
-border: 1px solid #555;
+width: max-width;
+height: 150px;
+border: 2px solid #050303;
 }
 
 .textCenter {
-display: flex;
+width: max-width;
+height: 200px;
 justify-content: center;
-align-items: center;
+align-items: stretch;
 width: 100%;
-aspect-ratio: 1 / 1;
+aspect-ratio: 1 / 3;
 }
