@@ -18,6 +18,7 @@ function clickImage(imgId){
   console.log('target: ', target)
   console.log('text: ', text)
   console.log('dataset: ', dataset)
+  console.log('task: ', task)
 
   // save data we care about
   sendData({"username": userId,
@@ -26,7 +27,8 @@ function clickImage(imgId){
             "img1": img1_id,
             "target": target,
             "text": text,
-            "dataset": dataset})
+            "dataset": dataset,
+            "task": task})
 
   // Delay display the next 2 images
   // If first time this gt is shown => display now the same pair (no shuffle now) with the other text
