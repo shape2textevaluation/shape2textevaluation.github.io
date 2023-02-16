@@ -213,8 +213,7 @@ function sendData(data) {
   //XHR.open('POST', 'https://script.google.com/macros/s/AKfycbzgoJLTCyaqrgrZ2jCHQZKymAZpW7ON1YX4nhXJ8lNyvraYf1MzJF01MIjJFWI-GQE/exec');
 
   // Set up request to my Google Sheet
-  XHR.open('POST', 'https://script.google.com/macros/s/AKfycbyF6a7xDnqCM-GzVsOKYBiTEDfWX0hpiwWm-gdgHl3340I2_uSKmOHCVF7s4DThpWeu/exec');
-                    //https://script.google.com/macros/s/AKfycbyF6a7xDnqCM-GzVsOKYBiTEDfWX0hpiwWm-gdgHl3340I2_uSKmOHCVF7s4DThpWeu/exec
+  XHR.open('POST', 'https://script.google.com/macros/s/AKfycbxUbrgbEcp2m6jc2XLDP7RagXBGHP0f4pCVU4eGElu4Zk-C8_7M-kSHy7_x8nRlIM1m4g/exec');
 
   // Send our FormData object; HTTP headers are set automatically
   XHR.send(FD);
