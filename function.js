@@ -214,7 +214,7 @@ function sendData(data) {
 
   // Set up request to my Google Sheet
   XHR.open('POST', 'https://script.google.com/macros/s/AKfycbxUbrgbEcp2m6jc2XLDP7RagXBGHP0f4pCVU4eGElu4Zk-C8_7M-kSHy7_x8nRlIM1m4g/exec');
-
+  
   // Send our FormData object; HTTP headers are set automatically
   XHR.send(FD);
 }
