@@ -83,8 +83,7 @@ function newSampleImages(){
     text = data[idx].text
     dataset = data[idx].dataset
     task = data[idx].task
-    base_url = "https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/"
-    base_url = 'http://localhost:8080/'
+    base_url = 'https://raw.githubusercontent.com/shape2textevaluation/shape2textevaluation.github.io/main/shapes/'
 
     // Method order is randomized
     var shapes = shuffleArray([gt_id, dist_id])
@@ -102,8 +101,8 @@ function newSampleImages(){
     img1_id = shapes[1]
 
     // display images
-    img0.src = base_url + "/" + img0_id + "/" + img0_id + ".png"
-    img1.src = base_url + "/" + img1_id + "/" + img1_id + ".png"
+    img0.src = base_url + img0_id + ".png"
+    img1.src = base_url + img1_id + ".png"
 
 
     // display text
