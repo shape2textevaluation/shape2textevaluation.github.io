@@ -7,44 +7,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Text-Shape adherence evaluation</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="./function.js"></script>
-  <script type="text/javascript" src="all_data.json"></script>
 </head>
 
-<body onload="newSampleImages(); const userId = userIdSetup();"><main>
+<body >
 
-<h1>Pick an object</h1>
+<form 
+  method="POST" 
+  action="https://script.google.com/macros/s/AKfycbyLk1uGh8N6gfAujDjaG3aPlAj0HxjiZN_zh1KC9LXpN17FRpTnWstcjzL4keUOhf8bJw/exec"
+>
+  <input name="Email" type="email" placeholder="Email" required>
+  <input name="Name" type="text" placeholder="Name" required>
+  <button type="submit">Send</button>
+</form>
 
-<br><b>Please click on the object that best matches the text description</b>. Look for the object whose shape and appearance are better described by the text. If the text description does not allow you to choose one object over the other, click on the "I cannot decide between the two objects" box. 
-<br>A new simulation is shown after each click, as an endless stream. You can stop at any time.
-<br>
-<i>Thanks a lot for your help!</i>
-</p>
-
-<hr>
-  <center><h3> <span id="Text"></span></h3></center>
-
-<img id="img0" onclick="clickImage('0')" class="imgHover split left"/>
-<img id="img1" onclick="clickImage('1')" class="imgHover split right" />
-
-<div style="clear: both;"> </div>
-<div style="height: 3px; display: block;" > </div>
-<div style="clear: both;"> </div>
-
-<div id="imgNone" onclick="clickImage('none')" class="imgHover split right divNone">
-  <div class="textCenter">
-  <center><h4 > I cannot decide between the two objects. </h4></center>
-  </div>
-</div>
-
-<div style="clear: both;"> </div>
-<div style="height: 100px; display: block;" > </div>
-
-<hr>
-<small><i> This site uses an external Google service to record choices made by the users. You might have to disable tracker blockers (such as the Privacy Badger addon) for it to work. </i></small>
-<div style="clear: both;"> </div>
-<div style="height: 100px; display: block;" > </div>
-
-</main></body>
+</body>
 </html>
