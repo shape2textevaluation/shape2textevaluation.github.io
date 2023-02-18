@@ -72,7 +72,7 @@ function displayText(file, idx) {
 
 function newSampleImages(){
 
-  fetch('./1e2h_data.json')
+  fetch('./randomt2s_1e2h_data.json')
   .then(response => response.json())
   .then(data => {
     console.log(data)
